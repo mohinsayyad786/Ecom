@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+
+<h1 class="mt-3 bg-primary text-white text-center">
+    Login
+</h1>
+
+<div class="col-md-8 mt-3">
+
+    <form method="POST" action="login" novalidate>
+        {% csrf_token %}
+        <table>
+            {{form}}
+            <tr>
+                <td><input type="submit" name="send"/ value="Login"></td>
+            </tr>
+            
+        </table>
+    </form>
+</div>
+
+{% endblock 'main' %}

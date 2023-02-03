@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+
+        <div class="col-md-3 mt-5">
+            <h2>Dashboard</h2>
+            <a href="\add"><button type="button" class="btn btn-primary mt-3">ADD PRODUCT</button></a>
+        </div>
+
+        <div class="col-md-9 mt-5">
+            <table class="table">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Shape</th>
+                    <th>Product Size</th>
+                    <th>Product Location</th>
+                    <th>Product Price</th>
+                </tr>
+
+                {% for d in data %}
+
+                    <tr>
+                        <td>{{d.product_id}}</td>
+                        <td>{{d.product_name}}</td>
+                        <td>{{d.product_shape}}</td>
+                        <td>{{d.product_size}}</td>
+                        <td>{{d.product_location}}</td>
+                        <td>{{d.product_price}}</td>
+
+
+                        <td><a href="/edit/{{d.id}}"><button class="btn btn-warning">Edit</button></a></td>
+                        <td><a href="/delete/{{d.id}}"><button class="btn btn-danger">Delete</button></a></td>
+                    </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+
+{% endblock 'main' %}
+
+

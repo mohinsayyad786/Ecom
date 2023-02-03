@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block 'main' %}
+<h2 class="mt-5">ADD PRODUCT</h2>
+<div class="col md-8 mt-3 m-auto">
+    
+    <form method="POST" action="/add">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="pid" class="form-label">PRODUCT ID:</label>
+            <input type="text" class="form-control" name="p" id="pid" placeholder="Enter PRODUCT ID" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="tid" class="form-label">Product Name:</label>
+            <input type="text" class="form-control" name="t" id="tid" placeholder="Enter Product Name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="sid" class="form-label">Product Shape:</label>
+            <input type="text" class="form-control" name="ps" id="tid" placeholder="Enter Shape" required>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="size" class="form-label">Size:</label>
+            <input type="text" class="form-control" name="siz" id="sizeid" placeholder="Enter size" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="lid" class="form-label">Location:</label>
+            <input type="text" class="form-control" name="l" id="lid" placeholder="Enter Location" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="prid" class="form-label">Price:</label>
+            <input type="text" class="form-control" name="pr" id="prid" placeholder="Enter price" required>
+        </div>
+ 
+       
+
+        <div class="mb-3">
+            <input type="submit" class="form-control btn btn-primary" name="send" value="ADD"/>
+        </div>
+
+    </form>
+</div>
+
+
+{% endblock 'main' %}
